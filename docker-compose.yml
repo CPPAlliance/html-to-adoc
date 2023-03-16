@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+
+  web:
+    build:
+      context: .
+    init: true
+    volumes:
+      - .:/code
+      - /Users/frank/src/boost-old-website:/old-content
+      - /Users/frank/src/boost-static-content:/new-content
+    stop_signal: SIGKILL
